@@ -1,0 +1,355 @@
+/* 1. Global Reset & Typography */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Enables smooth scrolling across the whole website */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* 2. Navigation Bar Styling */
+nav {
+    display: flex;
+    justify-content: space-between; /* Pushes logo left, links right */
+    align-items: center;
+    padding: 20px 10%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px; /* Space between links */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #3498db; /* Changes color when hovered */
+}
+
+/* 3. Hero Section Styling */
+#hero {
+    height: 80vh; /* Takes up 80% of the screen height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* 4. Button Styling */
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn {
+    padding: 12px 24px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.primary-btn {
+    background-color: #3498db;
+    color: #ffffff;
+    border: 2px solid #3498db;
+}
+
+.primary-btn:hover {
+    background-color: #2980b9;
+}
+
+.secondary-btn {
+    background-color: transparent;
+    color: #3498db;
+    border: 2px solid #3498db;
+}
+
+.secondary-btn:hover {
+    background-color: #3498db;
+    color: #ffffff;
+}
+
+/* 5. General Section Styling */
+.section {
+    padding: 80px 10%; /* Adds breathing room above and below the section */
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 50px;
+}
+
+/* 6. Projects Grid & Cards */
+.projects-grid {
+    display: grid;
+    /* This magically makes the cards wrap automatically on mobile screens! */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* Soft shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Card Hover Effect */
+.project-card:hover {
+    transform: translateY(-5px); /* Makes the card "lift" up */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.project-card h3 {
+    color: #3498db;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.project-card p {
+    color: #666;
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+.tech-stack {
+    font-size: 0.9rem;
+    color: #2c3e50;
+}
+
+.project-links {
+    margin-top: 15px;
+}
+
+.project-links a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+}
+
+.project-links a:hover {
+    text-decoration: underline;
+    color: #2980b9;
+}
+
+/* 7. Experience Section & Timeline */
+.bg-white {
+    background-color: #ffffff; /* Alternates background color for visual separation */
+}
+
+.experience-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Creates the vertical timeline line */
+.experience-item {
+    border-left: 3px solid #3498db;
+    padding-left: 25px;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+/* Creates the timeline dots */
+.experience-item::before {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: #3498db;
+    border-radius: 50%;
+    left: -9px; /* Centers the dot on the border */
+    top: 0;
+    box-shadow: 0 0 0 4px #ffffff; /* Gives a nice white ring around the dot */
+}
+
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.experience-header h3 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+}
+
+.experience-header .date {
+    background-color: #e8f4fd;
+    color: #3498db;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.experience-item h4 {
+    color: #7f8c8d;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.experience-highlights {
+    margin-top: 15px;
+    padding-left: 20px;
+    color: #555;
+}
+
+.experience-highlights li {
+    margin-bottom: 8px;
+}
+
+/* 8. About Section & Skills */
+.about-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows it to stack on mobile screens */
+    gap: 50px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-text {
+    flex: 1; /* Takes up equal space */
+    min-width: 300px;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+    color: #555;
+    font-size: 1.1rem;
+}
+
+.skills-container {
+    flex: 1; /* Takes up equal space */
+    min-width: 300px;
+}
+
+.skills-container h3 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/* Styling the individual skill tags */
+.skill-tag {
+    background-color: #e8f4fd;
+    color: #3498db;
+    padding: 8px 16px;
+    border-radius: 25px; /* Creates the pill shape */
+    font-weight: 500;
+    font-size: 0.95rem;
+    border: 1px solid #3498db;
+    transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+    background-color: #3498db;
+    color: #ffffff;
+    cursor: default;
+}
+
+/* 9. Contact Section */
+.contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-text {
+    color: #555;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: inherit; /* Inherits the font from the body */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Highlights the input box when a user clicks on it */
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+.contact-form button {
+    cursor: pointer;
+    font-size: 1.1rem;
+    margin-top: 10px;
+}
+
+/* 10. Footer */
+footer {
+    text-align: center;
+    padding: 30px;
+    background-color: #2c3e50;
+    color: #ffffff;
+    font-size: 0.9rem;
+}
