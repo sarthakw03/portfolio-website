@@ -12,13 +12,12 @@ html {
 }
 
 body {
-    background-color: #f3f4f6;
+    background-color: #111111;
     background-image: 
-        radial-gradient(at 40% 20%, rgba(139, 92, 246, 0.15) 0px, transparent 50%),
-        radial-gradient(at 80% 0%, rgba(59, 130, 246, 0.15) 0px, transparent 50%),
-        radial-gradient(at 0% 50%, rgba(236, 72, 153, 0.15) 0px, transparent 50%);
-    background-attachment: fixed;
-    color: #1f2937; /* Dark gray text for high contrast */
+      linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 30px 30px;
+    color: #e0e0e0; /* Soft white text for dark mode */
 }
 
 /* 2. Navigation Bar Styling */
