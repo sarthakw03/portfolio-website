@@ -24,5 +24,5 @@ To run this project locally on your machine:
 
 ## 📫 Contact
 Feel free to reach out to me via the contact form on the live website! 
-* **LinkedIn:** [My Profile](www.linkedin.com/in/sarthak-waghchaure-54295a292)
+* **LinkedIn:** [My Profile](https://www.linkedin.com/in/sarthak-waghchaure-54295a292)
 * **Email:** sarthakwaghchaure319@gmail.com   
