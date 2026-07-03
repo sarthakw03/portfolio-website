@@ -12,10 +12,13 @@ html {
 }
 
 body {
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-    background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite;
-    color: #ffffff; /* Makes text white for readability */
+    background-color: #f3f4f6;
+    background-image: 
+        radial-gradient(at 40% 20%, rgba(139, 92, 246, 0.15) 0px, transparent 50%),
+        radial-gradient(at 80% 0%, rgba(59, 130, 246, 0.15) 0px, transparent 50%),
+        radial-gradient(at 0% 50%, rgba(236, 72, 153, 0.15) 0px, transparent 50%);
+    background-attachment: fixed;
+    color: #1f2937; /* Dark gray text for high contrast */
 }
 
 /* 2. Navigation Bar Styling */
@@ -355,9 +358,3 @@ footer {
     font-size: 0.9rem;
 }
 
-/* Add this to the very bottom of your style.css file */
-@keyframes gradientBG {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
