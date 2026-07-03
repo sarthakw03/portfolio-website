@@ -361,3 +361,23 @@ footer {
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
+
+.contact-links {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.social-btn {
+    text-decoration: none;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.social-btn:hover {
+    background-color: #555;
+}
