@@ -71,8 +71,16 @@ nav {
 
 .hero-content p {
     font-size: 1.2rem;
-    color: #666;
-    margin-bottom: 30px;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 15px 25px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin: 0 auto 30px auto;
+    max-width: 600px;
+    line-height: 1.6;
 }
 
 /* 4. Button Styling */
@@ -105,7 +113,7 @@ nav {
     background-color: #2980b9;
 }
 
-.resume-btn {
+.glass-btn {
     background: rgba(255, 255, 255, 0.1);
     color: #ffffff;
     border: 2px solid rgba(255, 255, 255, 0.5);
@@ -115,7 +123,7 @@ nav {
     overflow: hidden;
 }
 
-.resume-btn::before {
+.glass-btn::before {
     content: "";
     position: absolute;
     top: 0; left: -100%;
@@ -124,22 +132,22 @@ nav {
     transition: left 0.5s ease;
 }
 
-.resume-btn:hover::before {
+.glass-btn:hover::before {
     left: 100%;
 }
 
-.resume-btn:hover {
+.glass-btn:hover {
     background: #ffffff;
     color: #3498db;
     transform: translateY(-3px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
-.resume-btn svg {
+.glass-btn svg {
     transition: transform 0.3s ease;
 }
 
-.resume-btn:hover svg {
+.glass-btn:hover svg {
     transform: translateY(2px);
 }
 
@@ -295,8 +303,15 @@ nav {
 
 .about-text p {
     margin-bottom: 20px;
-    color: #555;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     font-size: 1.1rem;
+    line-height: 1.6;
 }
 
 .skills-container {
