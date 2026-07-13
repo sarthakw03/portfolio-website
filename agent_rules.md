@@ -145,27 +145,23 @@ The `href="resume.pdf"` in `index.html` already pointed to this correct path, so
 
 | Element | Status |
 |---|---|
-| Resume download button | ✅ Functional + Premium glassmorphic design |
-| View Projects button | ✅ Matching glassmorphic design with icon |
-| Hero paragraph | ✅ Always-readable glass card styling |
-| About section paragraphs | ✅ Always-readable glass card styling |
+| Resume & Projects buttons | ✅ Premium glassmorphic design + Icons |
+| Hero & About paragraphs | ✅ Always-readable glass card styling |
+| Project Live Demos | ✅ Video modal popup implemented for all 3 projects |
+| Experience section | ✅ Text visibility on white background fixed |
 | Contact form | ⏳ Frontend-only (no backend yet) |
-| LinkedIn link | ⚠️ Has a line break in the URL (minor bug to fix) |
+| LinkedIn link | ✅ Fixed line break in URL |
 
 ---
 
 ## Pending / Known Issues
 
 1. **Contact Form Backend**: The form currently shows a browser `alert()` on submit. A real submission handler (e.g. Formspree or EmailJS) needs to be integrated.
-2. **LinkedIn URL Bug**: In `index.html` lines 143–145, the LinkedIn `href` value has an accidental newline inside the URL string — this may break the link.
-3. **Live Demo links**: All three project cards have `href="#"` placeholder links for "Live Demo". These need to be replaced with real URLs or removed.
 
 ---
 
 ## What to Do Next (Suggestions)
 
-- Fix the LinkedIn URL bug
-- Replace "Live Demo" placeholder links
 - Integrate a form submission service (Formspree recommended — free, no backend needed)
 - Consider adding a profile photo to the About section
 - Add a Skills section with progress indicators or icons

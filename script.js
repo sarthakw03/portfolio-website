@@ -20,4 +20,38 @@ document.addEventListener('DOMContentLoaded', () => {
             this.reset();
         });
     }
+
+    // Modal Logic
+    const modal = document.getElementById("videoModal");
+    const video = document.getElementById("demoVideo");
+    const closeBtn = document.querySelector(".close-modal");
+    const demoBtns = document.querySelectorAll(".demo-btn");
+
+    if (modal && video && closeBtn) {
+        demoBtns.forEach(btn => {
+            btn.addEventListener("click", function(e) {
+                e.preventDefault();
+                const videoSrc = this.getAttribute("data-video");
+                if (videoSrc) {
+                    video.src = videoSrc;
+                    modal.style.display = "block";
+                    video.play();
+                }
+            });
+        });
+
+        closeBtn.addEventListener("click", function() {
+            modal.style.display = "none";
+            video.pause();
+            video.src = ""; // reset video
+        });
+
+        window.addEventListener("click", function(e) {
+            if (e.target == modal) {
+                modal.style.display = "none";
+                video.pause();
+                video.src = ""; // reset video
+            }
+        });
+    }
 });
