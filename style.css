@@ -21,36 +21,64 @@ body {
 /* 2. Navigation Bar Styling */
 nav {
     display: flex;
-    justify-content: space-between; /* Pushes logo left, links right */
+    justify-content: space-between;
     align-items: center;
-    padding: 20px 10%;
-    background-color: #ffffff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 15px 30px;
+    background: rgba(15, 23, 42, 0.75); /* Sleek dark glass */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px; /* Floating pill shape */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
     position: sticky;
-    top: 0;
+    top: 20px; /* Detached from the top */
+    margin: 20px auto;
+    max-width: 90%;
+    z-index: 1000;
+    transition: all 0.3s ease;
 }
 
 .logo {
     font-size: 1.5rem;
-    font-weight: bold;
-    color: #2c3e50;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: #ffffff;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 30px; /* Space between links */
+    gap: 30px;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: #555;
-    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 600;
+    font-size: 1.1rem;
+    position: relative;
+    padding: 5px 0;
     transition: color 0.3s ease;
 }
 
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 4px;
+    bottom: -4px;
+    left: 0;
+    background-color: #3498db;
+    transition: width 0.3s ease;
+    border-radius: 2px;
+}
+
 .nav-links a:hover {
-    color: #3498db; /* Changes color when hovered */
+    color: #ffffff;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
 }
 
 /* 3. Hero Section Styling */
@@ -158,9 +186,28 @@ nav {
 
 .section-title {
     text-align: center;
-    font-size: 2.5rem;
-    color: #2c3e50;
-    margin-bottom: 50px;
+    font-size: 2.8rem;
+    color: #ffffff;
+    margin: 0 auto 60px auto;
+    width: fit-content;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 5px;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #3498db;
+    border-radius: 3px;
+    box-shadow: 0 0 15px rgba(52, 152, 219, 0.6);
 }
 
 /* 6. Projects Grid & Cards */
@@ -221,34 +268,47 @@ nav {
 
 /* 7. Experience Section & Timeline */
 .bg-white {
-    background-color: #ffffff; /* Alternates background color for visual separation */
-    color: #333333; /* Ensures text is visible against the white background */
+    background-color: transparent; /* Let the body gradient show through */
 }
 
 .experience-container {
-    max-width: 800px;
+    max-width: 950px;
     margin: 0 auto;
 }
 
 /* Creates the vertical timeline line */
 .experience-item {
-    border-left: 3px solid #3498db;
-    padding-left: 25px;
+    background: rgba(15, 23, 42, 0.4);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border-left: 4px solid #3498db;
+    padding: 40px;
     margin-bottom: 40px;
     position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    color: #ffffff;
+}
+
+.experience-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    border-color: rgba(255, 255, 255, 0.4);
 }
 
 /* Creates the timeline dots */
 .experience-item::before {
     content: '';
     position: absolute;
-    width: 15px;
-    height: 15px;
+    width: 20px;
+    height: 20px;
     background-color: #3498db;
     border-radius: 50%;
-    left: -9px; /* Centers the dot on the border */
-    top: 0;
-    box-shadow: 0 0 0 4px #ffffff; /* Gives a nice white ring around the dot */
+    left: -12px; /* Centers the dot on the border */
+    top: 35px; /* Aligns with header */
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2); 
 }
 
 .experience-header {
@@ -259,29 +319,39 @@ nav {
 }
 
 .experience-header h3 {
-    font-size: 1.5rem;
-    color: #2c3e50;
+    font-size: 1.8rem;
+    color: #ffffff;
 }
 
 .experience-header .date {
-    background-color: #e8f4fd;
+    background-color: rgba(52, 152, 219, 0.2);
     color: #3498db;
-    padding: 4px 12px;
+    padding: 6px 16px;
     border-radius: 20px;
     font-weight: bold;
-    font-size: 0.9rem;
+    font-size: 1rem;
+    border: 1px solid rgba(52, 152, 219, 0.3);
 }
 
 .experience-item h4 {
-    color: #7f8c8d;
+    color: rgba(255, 255, 255, 0.8);
     margin-bottom: 15px;
     font-weight: 500;
+    font-size: 1.2rem;
+}
+
+.experience-item p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 15px;
 }
 
 .experience-highlights {
     margin-top: 15px;
     padding-left: 20px;
-    color: #555;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+    line-height: 1.7;
 }
 
 .experience-highlights li {
@@ -352,47 +422,77 @@ nav {
 
 /* 9. Contact Section */
 .contact-container {
-    max-width: 600px;
+    max-width: 800px;
     margin: 0 auto;
     text-align: center;
+    background: rgba(15, 23, 42, 0.4);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
 .contact-text {
-    color: #555;
+    color: rgba(255, 255, 255, 0.9);
     margin-bottom: 30px;
-    font-size: 1.1rem;
+    font-size: 1.25rem;
+    line-height: 1.6;
 }
 
 .contact-form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
 }
 
 .contact-form input,
 .contact-form textarea {
     width: 100%;
-    padding: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-    font-family: inherit; /* Inherits the font from the body */
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    padding: 18px 25px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-family: inherit;
+    color: #ffffff;
+    transition: all 0.3s ease;
 }
 
-/* Highlights the input box when a user clicks on it */
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
 .contact-form input:focus,
 .contact-form textarea:focus {
     outline: none;
+    background-color: rgba(255, 255, 255, 0.15);
     border-color: #3498db;
-    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.3);
+    transform: translateY(-2px);
 }
 
 .contact-form button {
     cursor: pointer;
-    font-size: 1.1rem;
-    margin-top: 10px;
+    font-size: 1.25rem;
+    margin-top: 15px;
+    padding: 18px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+    border: none;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
+    transition: all 0.3s ease;
 }
+
+.contact-form button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(52, 152, 219, 0.6);
+}
+
 
 /* 10. Footer */
 footer {
@@ -476,4 +576,32 @@ footer {
     width: 100%;
     border-radius: 8px;
     margin-top: 15px;
+}
+
+/* 12. Profile Image Styling */
+.profile-img-container {
+    width: 220px;
+    height: 220px;
+    margin: 0 auto 20px auto;
+    border-radius: 50%;
+    padding: 5px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15), 0 0 20px rgba(255,255,255,0.1);
+    overflow: hidden;
+    animation: float 5s ease-in-out infinite;
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+    100% { transform: translateY(0px); }
 }
