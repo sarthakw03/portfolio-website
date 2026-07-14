@@ -129,10 +129,12 @@
     <div class="contact-container">
         <p class="contact-text">I am currently open to new opportunities, collaborations, and discussions around AI, Data Science, and software development. Feel free to reach out!</p>
         
-        <form class="contact-form">
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" rows="5" required></textarea>
+        <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+            <input type="hidden" name="access_key" value="604e7f15-5e6d-4873-b10a-1237d62e29ac">
+            <input type="checkbox" name="botcheck" style="display: none;">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
             <button type="submit" class="btn primary-btn">Send Message</button>
         </form>
     </div>
