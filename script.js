@@ -7,17 +7,44 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add an event listener to handle the 'submit' action
     if (contactForm) {
         contactForm.addEventListener('submit', function(event) {
-            // Prevent the default page refresh
+            // Prevent the default page redirection
             event.preventDefault();
 
-            // Get the values the user typed in
-            const name = this.querySelector('input[type="text"]').value;
-            
-            // Show a professional success message
-            alert(`Thank you, ${name}! Your message has been sent successfully. I will get back to you soon.`);
-            
-            // Clear the form fields
-            this.reset();
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.innerText;
+            submitBtn.innerText = "Sending...";
+            submitBtn.disabled = true;
+
+            const formData = new FormData(this);
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
+
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: json
+            })
+            .then(async (response) => {
+                let jsonResponse = await response.json();
+                if (response.status == 200) {
+                    alert(`Thank you, ${object.name}! Your message has been sent successfully. I will get back to you soon.`);
+                    contactForm.reset();
+                } else {
+                    console.log(response);
+                    alert(jsonResponse.message ? jsonResponse.message : "Something went wrong. Please try again.");
+                }
+            })
+            .catch((error) => {
+                console.log(error);
+                alert("Something went wrong. Please check your internet connection and try again.");
+            })
+            .finally(() => {
+                submitBtn.innerText = originalBtnText;
+                submitBtn.disabled = false;
+            });
         });
     }
 
