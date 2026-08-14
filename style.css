@@ -681,3 +681,103 @@ footer p {
     opacity: 1;
     transform: translateY(0);
 }
+
+/* 14. Certifications Section */
+.certifications-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cert-item {
+    background: rgba(15, 23, 42, 0.4);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.cert-header {
+    padding: 20px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.05);
+    transition: background 0.3s ease;
+}
+
+.cert-header:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.cert-header h3 {
+    color: #ffffff;
+    font-size: 1.3rem;
+    margin: 0;
+}
+
+.cert-icon {
+    color: #3498db;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.cert-item.active .cert-icon {
+    transform: rotate(180deg);
+}
+
+.cert-content {
+    max-height: 0;
+    padding: 0 25px;
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.cert-item.active .cert-content {
+    max-height: 1000px;
+    padding: 20px 25px 25px 25px;
+    opacity: 1;
+}
+
+.cert-img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    display: block;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.cert-content p {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 20px;
+    font-size: 1.05rem;
+}
+
+.cert-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.cert-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+    color: white;
+}
+
+.linkedin-btn {
+    background: linear-gradient(135deg, #0077b5, #005582);
+}

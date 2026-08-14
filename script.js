@@ -106,4 +106,23 @@ document.addEventListener('DOMContentLoaded', () => {
         revealObserver.observe(el);
     });
 
+    // Certifications Accordion Logic
+    const certHeaders = document.querySelectorAll('.cert-header');
+    
+    certHeaders.forEach(header => {
+        header.addEventListener('click', () => {
+            const certItem = header.parentElement;
+            
+            // Toggle active class on the clicked item
+            certItem.classList.toggle('active');
+            
+            // Optional: Close other open certificate items (Accordion style)
+            // document.querySelectorAll('.cert-item').forEach(item => {
+            //     if (item !== certItem) {
+            //         item.classList.remove('active');
+            //     }
+            // });
+        });
+    });
+
 });
