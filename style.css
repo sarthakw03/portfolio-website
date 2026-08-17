@@ -728,7 +728,7 @@ footer p {
     transition: transform 0.3s ease;
 }
 
-.cert-item.active .cert-icon {
+.cert-item.open .cert-icon {
     transform: rotate(180deg);
 }
 
@@ -739,7 +739,7 @@ footer p {
     transition: all 0.4s ease;
 }
 
-.cert-item.active .cert-content {
+.cert-item.open .cert-content {
     max-height: 1000px;
     padding: 20px 25px 25px 25px;
     opacity: 1;

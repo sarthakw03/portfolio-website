@@ -113,15 +113,8 @@ document.addEventListener('DOMContentLoaded', () => {
         header.addEventListener('click', () => {
             const certItem = header.parentElement;
             
-            // Toggle active class on the clicked item
-            certItem.classList.toggle('active');
-            
-            // Optional: Close other open certificate items (Accordion style)
-            // document.querySelectorAll('.cert-item').forEach(item => {
-            //     if (item !== certItem) {
-            //         item.classList.remove('active');
-            //     }
-            // });
+            // Toggle 'open' class on the clicked item to avoid conflict with reveal's 'active' class
+            certItem.classList.toggle('open');
         });
     });
 
